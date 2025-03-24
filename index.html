@@ -1,136 +1,56 @@
 
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShopFlow - Smart Shopping with AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopFlow</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-    }
-
-    header {
-      padding: 20px;
-    }
-
-    .tagline {
-      color: #ffa500;
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    .note {
-      margin-top: 0.2rem;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    nav {
-      display: flex;
-      justify-content: flex-end;
-      gap: 20px;
-      padding: 10px 20px;
-    }
-
-    nav a {
-      color: #ffa500;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .card {
-      background-color: #ffa500;
-      border-radius: 10px;
-      padding: 30px 20px;
-      font-weight: bold;
-      transition: background-color 0.3s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      background-color: #8a2be2;
-    }
-
-    .card a {
-      color: #000;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    .search-container {
-      margin: 30px auto;
-      max-width: 400px;
-    }
-
-    .search-container input {
-      padding: 10px;
-      width: 80%;
-      border-radius: 5px;
-      border: none;
-    }
-
-    footer {
-      margin-top: 50px;
-      color: #aaa;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-    }
-  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-  <nav>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
-    <a href="offers.html">Offers</a>
-    <a href="deals.html">Deals</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
   <header>
-    <h1 style="color: #b28efc">Welcome to ShopFlow</h1>
-    <p class="tagline">The easiest way to shop online with AI assistance.</p>
-    <p class="note">No registration required</p>
+    <div class="logo">ShopFlow</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shop.html">Start Shopping</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="deals.html">Deals</a></li>
+        <li><a href="what.html">What We Offer</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="search-container">
-    <input type="text" placeholder="Search your favorite brands..." />
-  </div>
+  <main>
+    <section class="intro">
+      <h1>Welcome to ShopFlow</h1>
+      <p>The easiest way to shop online with AI assistance.</p>
+      <p><strong>No registration required</strong> – start shopping smarter today.</p>
+    </section>
 
-  <section class="grid">
-    <div class="card"><a href="about.html">About Us</a></div>
-    <div class="card"><a href="shop.html">Start Shopping</a></div>
-    <div class="card"><a href="offers.html">What We Offer</a></div>
-    <div class="card"><a href="deals.html">Latest Deals</a></div>
-    <div class="card"><a href="contact.html">Contact</a></div>
-    <div class="card"><a href="https://www.asos.com/" target="_blank">ASOS Store</a></div>
-  </section>
+    <section class="grid-buttons">
+      <a href="about.html" class="grid-item">About Us</a>
+      <a href="shop.html" class="grid-item">Start Shopping</a>
+      <a href="what.html" class="grid-item">What We Offer</a>
+      <a href="deals.html" class="grid-item">Deals</a>
+      <a href="offers.html" class="grid-item">Offers</a>
+      <a href="contact.html" class="grid-item">Contact</a>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 ShopFlow. All rights reserved.
+    <p>Follow us on:</p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p>&copy; 2025 ShopFlow. All rights reserved.</p>
   </footer>
-</body>
 
+</body>
 </html>
+
