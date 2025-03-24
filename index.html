@@ -2,101 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ShopFlow</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      font-family: 'Arial', sans-serif;
-      color: white;
-      text-align: center;
-    }
-
-    header {
-      padding: 20px;
-      background-color: #000;
-    }
-
-    header h1 {
-      color: #A68EFF;
-      margin-bottom: 5px;
-    }
-
-    header p {
-      color: #FFA500;
-      margin-top: 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .grid a {
+    /* Cube Styles */
+    .cube {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
       background-color: #FFA500;
-      padding: 30px;
-      border-radius: 15px;
       color: black;
-      text-decoration: none;
+      font-size: 1.1rem;
       font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
+      box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .cube:hover {
+      background-color: #8A2BE2;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    /* Search Field */
+    .search-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      padding: 8px;
+      border-radius: 6px 0 0 6px;
+      border: none;
+      background: #333;
+      color: white;
+    }
+
+    .search-button {
+      padding: 8px 12px;
+      background: #FFA500;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 0 6px 6px 0;
       transition: 0.3s;
     }
 
-    .grid a:hover {
-      background-color: #8A2BE2;
-      color: white;
+    .search-button:hover {
+      background: #8A2BE2;
     }
 
-    footer {
-      padding: 30px;
-      background-color: #000;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    .social a {
-      margin: 0 10px;
-      color: #FFA500;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
-
-    .social a:hover {
-      color: #8A2BE2;
+    /* Mobile Optimization */
+    @media (max-width: 640px) {
+      .grid-cols-3 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+      .search-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-input, .search-button {
+        width: 100%;
+        border-radius: 6px;
+        margin-top: 5px;
+      }
     }
   </style>
 </head>
-<body>
+<body class="bg-black text-orange-400 font-sans">
 
-  <header>
-    <h1>Welcome to ShopFlow</h1>
-    <p>The easiest way to shop online with AI assistance</p>
-    <p><em>No registration required</em></p>
+  <!-- Header -->
+  <header class="p-6 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+    <h1 class="text-3xl font-bold text-violet-400">ShopFlow</h1>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search..." class="search-input" />
+      <button id="search-button" class="search-button">🔍</button>
+    </div>
   </header>
 
-  <section class="grid">
-    <a href="about.html">About Us</a>
-    <a href="shop.html">Start Shopping</a>
-    <a href="what.html">What We Offer</a>
-    <a href="deals.html">Top Deals</a>
-    <a href="offers.html">Latest Offers</a>
-    <a href="contact.html">Contact Us</a>
+  <!-- Welcome Text -->
+  <section class="text-center py-10 px-4">
+    <h2 class="text-4xl sm:text-5xl font-bold text-violet-400">Welcome to ShopFlow</h2>
+    <p class="mt-4 text-lg sm:text-xl text-orange-300">The easiest way to shop online with AI assistance.</p>
   </section>
 
-  <footer>
-    <div class="social">
-      <a href="https://facebook.com" target="_blank">Facebook</a>
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+  <!-- Main Navigation Cubes -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto text-center py-10 px-4">
+    <a href="about.html" class="cube">About Us</a>
+    <a href="shop.html" class="cube">Start Shopping</a>
+    <a href="offers.html" class="cube">What We Offer</a>
+    <a href="deals.html" class="cube">Deals & Discounts</a>
+    <a href="contact.html" class="cube">Contact Us</a>
+    <a href="https://annabats.github.io/shopflow-register" class="cube">Register</a>
+  </section>
+
+  <!-- Social Media Links -->
+  <section class="text-center py-8 px-4">
+    <h3 class="text-2xl text-violet-400 font-bold mb-4">Follow Us</h3>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+      <a href="https://facebook.com" target="_blank" class="social-link">Facebook</a>
+      <a href="https://instagram.com" target="_blank" class="social-link">Instagram</a>
+      <a href="https://linkedin.com" target="_blank" class="social-link">LinkedIn</a>
     </div>
-    <p>© 2025 ShopFlow. All rights reserved.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-500">
+    © 2025 ShopFlow. All rights reserved.
   </footer>
+
+  <!-- Search Functionality Script -->
+  <script>
+    document.getElementById('search-button').addEventListener('click', function() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      alert("Search feature coming soon: " + query);
+    });
+  </script>
 
 </body>
 </html>
