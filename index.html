@@ -1,54 +1,101 @@
-
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShopFlow</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      background-color: #000;
+    }
+
+    header h1 {
+      color: #A68EFF;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      color: #FFA500;
+      margin-top: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .grid a {
+      background-color: #FFA500;
+      padding: 30px;
+      border-radius: 15px;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .grid a:hover {
+      background-color: #8A2BE2;
+      color: white;
+    }
+
+    footer {
+      padding: 30px;
+      background-color: #000;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .social a {
+      margin: 0 10px;
+      color: #FFA500;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .social a:hover {
+      color: #8A2BE2;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">ShopFlow</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="shop.html">Start Shopping</a></li>
-        <li><a href="offers.html">Offers</a></li>
-        <li><a href="deals.html">Deals</a></li>
-        <li><a href="what.html">What We Offer</a></li>
-      </ul>
-    </nav>
+    <h1>Welcome to ShopFlow</h1>
+    <p>The easiest way to shop online with AI assistance</p>
+    <p><em>No registration required</em></p>
   </header>
 
-  <main>
-    <section class="intro">
-      <h1>Welcome to ShopFlow</h1>
-      <p>The easiest way to shop online with AI assistance.</p>
-      <p><strong>No registration required</strong> – start shopping smarter today.</p>
-    </section>
-
-    <section class="grid-buttons">
-      <a href="about.html" class="grid-item">About Us</a>
-      <a href="shop.html" class="grid-item">Start Shopping</a>
-      <a href="what.html" class="grid-item">What We Offer</a>
-      <a href="deals.html" class="grid-item">Deals</a>
-      <a href="offers.html" class="grid-item">Offers</a>
-      <a href="contact.html" class="grid-item">Contact</a>
-    </section>
-  </main>
+  <section class="grid">
+    <a href="about.html">About Us</a>
+    <a href="shop.html">Start Shopping</a>
+    <a href="what.html">What We Offer</a>
+    <a href="deals.html">Top Deals</a>
+    <a href="offers.html">Latest Offers</a>
+    <a href="contact.html">Contact Us</a>
+  </section>
 
   <footer>
-    <p>Follow us on:</p>
-    <div class="social-links">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <div class="social">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
     </div>
-    <p>&copy; 2025 ShopFlow. All rights reserved.</p>
+    <p>© 2025 ShopFlow. All rights reserved.</p>
   </footer>
 
 </body>
