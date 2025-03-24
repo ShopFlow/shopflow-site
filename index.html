@@ -1,40 +1,136 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopFlow</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopFlow - Smart Shopping with AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+    }
+
+    .tagline {
+      color: #ffa500;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .note {
+      margin-top: 0.2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      padding: 10px 20px;
+    }
+
+    nav a {
+      color: #ffa500;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #ffa500;
+      border-radius: 10px;
+      padding: 30px 20px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background-color: #8a2be2;
+    }
+
+    .card a {
+      color: #000;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .search-container {
+      margin: 30px auto;
+      max-width: 400px;
+    }
+
+    .search-container input {
+      padding: 10px;
+      width: 80%;
+      border-radius: 5px;
+      border: none;
+    }
+
+    footer {
+      margin-top: 50px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header class="header">
-    <h1 class="logo">ShopFlow</h1>
-    <nav class="nav-links">
-      <a href="about.html">About</a>
-      <a href="offers.html">Offers</a>
-      <a href="deals.html">Deals</a>
-      <a href="shop.html">Shop</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <nav>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="offers.html">Offers</a>
+    <a href="deals.html">Deals</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header>
+    <h1 style="color: #b28efc">Welcome to ShopFlow</h1>
+    <p class="tagline">The easiest way to shop online with AI assistance.</p>
+    <p class="note">No registration required</p>
   </header>
 
-  <main class="main-section">
-    <h2 class="welcome-title">Welcome to ShopFlow</h2>
-    <p class="subtitle">The easiest way to shop online with AI assistance.</p>
-    <p class="note">No registration required!</p>
+  <div class="search-container">
+    <input type="text" placeholder="Search your favorite brands..." />
+  </div>
 
-    <div class="button-grid">
-      <a href="about.html" class="main-button">About Us</a>
-      <a href="shop.html" class="main-button">Shop Now</a>
-      <a href="offers.html" class="main-button">What We Offer</a>
-      <a href="deals.html" class="main-button">Deals</a>
-      <a href="contact.html" class="main-button">Contact</a>
-    </div>
-  </main>
+  <section class="grid">
+    <div class="card"><a href="about.html">About Us</a></div>
+    <div class="card"><a href="shop.html">Start Shopping</a></div>
+    <div class="card"><a href="offers.html">What We Offer</a></div>
+    <div class="card"><a href="deals.html">Latest Deals</a></div>
+    <div class="card"><a href="contact.html">Contact</a></div>
+    <div class="card"><a href="https://www.asos.com/" target="_blank">ASOS Store</a></div>
+  </section>
 
   <footer>
-    <p>© 2025 ShopFlow. All rights reserved.</p>
+    &copy; 2025 ShopFlow. All rights reserved.
   </footer>
 </body>
-</html>
 
+</html>
