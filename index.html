@@ -29,6 +29,34 @@
       margin: 0;
     }
 
+    .search-container {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .search-container input {
+      padding: 10px;
+      width: 60%;
+      max-width: 400px;
+      border: none;
+      border-radius: 10px 0 0 10px;
+      outline: none;
+    }
+
+    .search-container button {
+      padding: 10px 20px;
+      background-color: #FFA500;
+      border: none;
+      border-radius: 0 10px 10px 0;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background-color: #8A2BE2;
+      color: white;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -88,6 +116,10 @@
       .grid {
         grid-template-columns: 1fr;
       }
+
+      .search-container input {
+        width: 70%;
+      }
     }
   </style>
 </head>
@@ -98,6 +130,11 @@
     <p>The easiest way to shop online with AI assistance</p>
     <p><strong>No registration required</strong> — jump in and start shopping</p>
   </header>
+
+  <div class="search-container">
+    <input type="text" placeholder="Search products or brands..." />
+    <button>Search</button>
+  </div>
 
   <section class="grid">
     <a href="about.html" class="cube">About Us</a>
@@ -120,6 +157,7 @@
 
 </body>
 </html>
+
 
 
 
