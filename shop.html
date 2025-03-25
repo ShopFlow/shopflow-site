@@ -3,59 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Start Shopping - ShopFlow</title>
+  <title>Start Shopping</title>
   <style>
     body {
-      background-color: #000000;
+      margin: 0;
+      background-color: #000;
+      font-family: 'Segoe UI', sans-serif;
       color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .shop-container {
-      border: 2px solid #8A2BE2;
+      text-align: center;
+      border: 4px solid;
+      border-image: linear-gradient(45deg, #a855f7, #f97316) 1;
       padding: 40px;
-      border-radius: 12px;
-      display: inline-block;
-      background-color: #111;
-      box-shadow: 0 0 25px #8A2BE2;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #a855f7, 0 0 40px #f97316;
+      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    .shop-container:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 0 30px #f97316, 0 0 60px #a855f7;
     }
 
     .shop-container h2 {
+      font-size: 1.8rem;
       margin-bottom: 30px;
-      font-size: 2rem;
     }
 
-    .shop-link img {
-      width: 160px;
-      height: auto;
+    .affiliate-link {
+      display: inline-block;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
       transition: transform 0.3s ease;
     }
 
-    .shop-link img:hover {
-      transform: scale(1.05);
+    .affiliate-link:hover {
+      transform: scale(1.1) rotate(-1deg);
     }
 
-    .note {
-      margin-top: 30px;
-      color: #cccccc;
+    .affiliate-link img {
+      width: 220px;
+      height: auto;
+    }
+
+    .coming-soon {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #a855f7;
       font-style: italic;
     }
   </style>
 </head>
 <body>
-
   <div class="shop-container">
-    <h2>Start Shopping</h2>
-
-    <a href="https://s.click.aliexpress.com/e/_oDNGERR" target="_blank" class="shop-link">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/AliExpress_logo.svg/512px-AliExpress_logo.svg.png" alt="AliExpress Logo" />
+    <h2>Start Shopping Smart</h2>
+    <a class="affiliate-link" href="https://s.click.aliexpress.com/e/_oDNGERR" target="_blank">
+      <img src="aliexpress-logo.png" alt="AliExpress" />
     </a>
-
-    <p class="note">More shops are coming soon!</p>
+    <div class="coming-soon">More partner stores coming soon!</div>
   </div>
-
 </body>
 </html>
+
 
