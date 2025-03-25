@@ -1,74 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Start Shopping</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
       background-color: #000;
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
+      font-family: Arial, sans-serif;
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-    }
-
-    .shop-container {
+      flex-direction: column;
+      min-height: 100vh;
       text-align: center;
-      border: 4px solid;
-      border-image: linear-gradient(45deg, #a855f7, #f97316) 1;
-      padding: 40px;
+    }
+
+    .shop-box {
+      background: linear-gradient(135deg, rgba(162, 93, 255, 0.2), rgba(255, 165, 0, 0.2));
+      border: 2px solid;
+      border-image: linear-gradient(135deg, #A25DFF, #FFA500) 1;
       border-radius: 20px;
-      box-shadow: 0 0 25px #a855f7, 0 0 40px #f97316;
-      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+      padding: 40px 20px;
+      box-shadow: 0 0 15px rgba(255, 165, 0, 0.3), 0 0 15px rgba(162, 93, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 400px;
+      width: 90%;
     }
 
-    .shop-container:hover {
-      transform: translateY(-5px) scale(1.01);
-      box-shadow: 0 0 30px #f97316, 0 0 60px #a855f7;
+    .shop-box:hover {
+      transform: scale(1.02) rotate(0.5deg);
+      box-shadow: 0 0 25px rgba(255, 165, 0, 0.5), 0 0 25px rgba(162, 93, 255, 0.5);
     }
 
-    .shop-container h2 {
-      font-size: 1.8rem;
-      margin-bottom: 30px;
-    }
-
-    .affiliate-link {
-      display: inline-block;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
+    .store-logo {
+      width: 200px;
+      margin-bottom: 20px;
       transition: transform 0.3s ease;
     }
 
-    .affiliate-link:hover {
-      transform: scale(1.1) rotate(-1deg);
+    .store-logo:hover {
+      transform: scale(1.05);
     }
 
-    .affiliate-link img {
-      width: 220px;
-      height: auto;
+    .shop-link {
+      display: inline-block;
+      text-decoration: none;
     }
 
     .coming-soon {
       margin-top: 20px;
       font-size: 1rem;
-      color: #a855f7;
-      font-style: italic;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .store-logo {
+        width: 150px;
+      }
+      .shop-box {
+        padding: 30px 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="shop-container">
-    <h2>Start Shopping Smart</h2>
-    <a class="affiliate-link" href="https://s.click.aliexpress.com/e/_oDNGERR" target="_blank">
-      <img src="aliexpress-logo.png" alt="AliExpress" />
+
+  <div class="shop-box">
+    <a class="shop-link" href="https://s.click.aliexpress.com/e/_oDNGERR" target="_blank">
+      <img class="store-logo" src="https://ae01.alicdn.com/kf/Sa0202ec8a96a4085962acfc27e9ffd04F/1080x1080.jpg" alt="AliExpress Logo">
     </a>
-    <div class="coming-soon">More partner stores coming soon!</div>
+    <div class="coming-soon">
+      More stores coming soon...
+    </div>
   </div>
+
 </body>
 </html>
 
