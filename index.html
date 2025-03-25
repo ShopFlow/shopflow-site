@@ -1,155 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>ShopFlow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 30px;
+      margin: 0;
+      padding: 0;
     }
 
     h1 {
-      color: #b180ff;
+      color: #b387f9;
       font-size: 3em;
+      margin-top: 20px;
     }
 
     p {
       font-size: 1.2em;
-      margin-bottom: 30px;
+    }
+
+    .highlight {
+      color: orange;
+      font-weight: bold;
     }
 
     .search-container {
+      margin: 20px auto;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 40px;
+      gap: 0;
     }
 
-    .search-box {
-      padding: 15px;
-      font-size: 1em;
-      width: 300px;
-      border: 2px solid #b180ff;
-      border-radius: 10px 0 0 10px;
+    input[type="text"] {
+      width: 60%;
+      padding: 12px;
+      border-radius: 5px 0 0 5px;
+      border: none;
+      font-size: 16px;
       outline: none;
-      background-color: #111;
-      color: white;
+      box-shadow: 0 0 10px #8000ff;
     }
 
-    .search-button {
-      padding: 15px 25px;
+    button {
+      padding: 13px 25px;
       background-color: orange;
       border: none;
-      color: black;
+      color: #000;
       font-weight: bold;
-      border-radius: 0 10px 10px 0;
       cursor: pointer;
+      border-radius: 0 5px 5px 0;
     }
 
     .grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      margin-top: 40px;
       gap: 20px;
     }
 
     .box {
       background-color: orange;
       color: black;
-      padding: 30px 20px;
+      padding: 30px;
       width: 250px;
-      height: 120px;
+      height: 100px;
+      font-weight: bold;
+      border-radius: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-weight: bold;
-      border-radius: 20px;
-      transition: transform 0.3s, background 0.3s;
-      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.3s ease;
     }
 
     .box:hover {
       transform: translateY(-5px);
-      background: #b180ff;
+      background-color: #8000ff;
       color: white;
     }
 
-    .single-box {
+    #result {
       margin-top: 30px;
-    }
-
-    #results {
-      margin-top: 40px;
-      padding: 20px;
-      border: 2px dashed #b180ff;
-      border-radius: 10px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
       white-space: pre-wrap;
-      background: #111;
-    }
-
-    @media (max-width: 768px) {
-      .box {
-        width: 90%;
-      }
-
-      .search-box {
-        width: 70%;
-      }
+      color: #ccc;
+      padding: 20px;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <h1>ShopFlow</h1>
-  <p>The easiest way to shop online with AI assistance<br><strong>No registration required</strong> — jump in and start shopping</p>
 
+  <h1>ShopFlow</h1>
+  <p>The easiest way to shop online with AI assistance<br>
+  <span class="highlight">No registration required</span> — jump in and start shopping</p>
+
+  <!-- ✅ AI Powered Search -->
   <div class="search-container">
-    <input id="searchInput" type="text" class="search-box" placeholder="Search products or brands..."/>
-    <button onclick="searchProduct()" class="search-button">Search</button>
+    <input type="text" id="searchInput" placeholder="Search products or brands..." />
+    <button onclick="search()">Search</button>
   </div>
 
   <div class="grid">
-    <div class="box" onclick="location.href='about.html'">About Us</div>
-    <div class="box" onclick="location.href='shop.html'">Start Shopping</div>
-    <div class="box" onclick="location.href='offers.html'">What We Offer</div>
+    <a href="about.html" class="box">About Us</a>
+    <a href="shop.html" class="box">Start Shopping</a>
+    <a href="what.html" class="box">What We Offer</a>
   </div>
 
-  <div class="grid single-box">
-    <div class="box" onclick="location.href='contact.html'">Contact</div>
+  <div class="grid" style="margin-top: 20px;">
+    <a href="contact.html" class="box">Contact</a>
   </div>
 
-  <div id="results"></div>
+  <div id="result"></div>
 
   <script>
-    async function searchProduct() {
-      const prompt = document.getElementById("searchInput").value;
-      const resultsBox = document.getElementById("results");
-      resultsBox.innerHTML = "Searching for deals... 🔎";
+    async function search() {
+      const prompt = document.getElementById('searchInput').value;
+      const res = await fetch("https://shopflow-ai-server.annabatsikadze9.repl.co/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ prompt })
+      });
 
-      try {
-        const res = await fetch("https://shopflow-ai-server.annabatsikadze9.repl.co/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ prompt })
-        });
-
-        const data = await res.json();
-        resultsBox.innerHTML = `<strong>AI Results:</strong><br>${data.result}`;
-      } catch (error) {
-        resultsBox.innerHTML = "❌ Error fetching results.";
-        console.error(error);
-      }
+      const data = await res.json();
+      document.getElementById("result").innerText = data.result || "No results found.";
     }
   </script>
+
 </body>
 </html>
 
