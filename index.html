@@ -8,13 +8,13 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #000;
+      background-color: #000000;
       color: #FFA500;
     }
 
     header {
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 40px 20px 10px;
     }
 
     header h1 {
@@ -31,7 +31,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 25px;
       padding: 40px 20px;
       max-width: 1000px;
@@ -42,7 +42,7 @@
       background-color: #FFA500;
       color: black;
       text-align: center;
-      padding: 35px 20px;
+      padding: 40px 20px;
       border-radius: 15px;
       font-weight: bold;
       font-size: 1.1rem;
@@ -59,7 +59,7 @@
     footer {
       text-align: center;
       padding: 30px 20px;
-      background-color: #000;
+      background-color: #000000;
       font-size: 0.9rem;
     }
 
@@ -78,9 +78,15 @@
       color: #8A2BE2;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -90,7 +96,7 @@
   <header>
     <h1>ShopFlow</h1>
     <p>The easiest way to shop online with AI assistance</p>
-    <p><strong>No registration required</strong> – start now</p>
+    <p><strong>No registration required</strong> — jump in and start shopping</p>
   </header>
 
   <section class="grid">
@@ -114,5 +120,6 @@
 
 </body>
 </html>
+
 
 
