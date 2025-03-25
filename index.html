@@ -41,18 +41,19 @@
       padding: 14px;
       width: 60%;
       max-width: 400px;
-      border: 2px solid #8a2be2;
+      border: 2px solid #b18cff;
       border-radius: 10px 0 0 10px;
       font-size: 1em;
       background-color: #111;
       color: #fff;
       outline: none;
+      box-shadow: 0 0 10px #b18cff;
     }
 
     .search-bar button {
       padding: 14px 24px;
       background-color: #ffa500;
-      border: 2px solid #8a2be2;
+      border: 2px solid #b18cff;
       color: #000;
       font-weight: bold;
       border-radius: 0 10px 10px 0;
@@ -81,7 +82,7 @@
       width: 250px;
       font-size: 1.2em;
       font-weight: bold;
-      transition: 0.3s;
+      transition: 0.3s ease;
       cursor: pointer;
       text-decoration: none;
       display: flex;
@@ -90,8 +91,10 @@
     }
 
     .grid .box:hover {
-      background-color: #ffcc66;
-      transform: scale(1.05);
+      background-color: #b18cff;
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #b18cff;
+      color: #fff;
     }
 
     .single-box {
@@ -107,15 +110,10 @@
     }
 
     @media (max-width: 600px) {
-      .search-bar input {
+      .search-bar input, .search-bar button {
         width: 100%;
         border-radius: 10px;
-        margin-bottom: 10px;
-      }
-
-      .search-bar button {
-        width: 100%;
-        border-radius: 10px;
+        margin: 5px 0;
       }
 
       .grid .box {
@@ -131,8 +129,8 @@
   <p><span class="highlight">No registration required</span> — jump in and start shopping</p>
 
   <div class="search-bar">
-    <form action="https://best.aliexpress.com/wholesale" method="GET" target="_blank">
-      <input type="text" name="SearchText" placeholder="Search products or brands..." required />
+    <form id="searchForm" onsubmit="handleSearch(event)">
+      <input type="text" id="searchInput" placeholder="Search products or brands..." required />
       <button type="submit">Search</button>
     </form>
   </div>
@@ -151,8 +149,24 @@
     &copy; 2025 ShopFlow. All rights reserved.
   </div>
 
+  <script>
+    function handleSearch(event) {
+      event.preventDefault();
+      const query = document.getElementById("searchInput").value.trim();
+
+      // ჩაშენებული მხოლოდ Aliexpress-სთვის (შენი affiliate ლინკით)
+      const aliexpressLink = `https://best.aliexpress.com/wholesale?SearchText=${encodeURIComponent(query)}&aff_fcid=aa29af5c56bb4c89aa147db6da1ed5b9-1742906550667-02036-_oDNGERR&tt=CPS_NORMAL&aff_fsk=_oDNGERR&aff_platform=portals-tool&sk=_oDNGERR&aff_trace_key=aa29af5c56bb4c89aa147db6da1ed5b9-1742906550667-02036-_oDNGERR&terminal_id=43a399ee08ff4432807ed6b50469c1a5&afSmartRedirect=y`;
+
+      // მომავალში შეგიძლიათ დაამატოთ სხვა redirect სისტემა:
+      // if (future logic for Amazon, Temu, etc) { ... }
+
+      window.open(aliexpressLink, '_blank');
+    }
+  </script>
+
 </body>
 </html>
+
 
 
 
