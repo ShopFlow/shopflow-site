@@ -1,65 +1,65 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us - ShopFlow</title>
+  <title>About ShopFlow</title>
   <style>
     body {
-      background-color: black;
+      background-color: #000;
       color: white;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
     h1 {
       color: #b280ff;
-      margin-bottom: 20px;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
     }
 
     p {
       font-size: 1.2rem;
+      line-height: 1.8;
       max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
+      margin: 0 auto 60px auto;
     }
 
-    .btn-back {
-      margin-top: 40px;
-      padding: 15px 30px;
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
       background-color: orange;
       color: black;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1rem;
       text-decoration: none;
-      transition: background-color 0.3s;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 0 12px #ff9900;
+      transition: all 0.3s ease;
     }
 
-    .btn-back:hover {
-      background-color: #a655ff;
+    .back-button:hover {
+      background-color: #b280ff;
       color: white;
-    }
-
-    @media (max-width: 600px) {
-      p {
-        font-size: 1rem;
-      }
+      box-shadow: 0 0 20px #b280ff;
     }
   </style>
 </head>
 <body>
+
   <h1>About ShopFlow</h1>
+
   <p>
-    ShopFlow was created with one mission: to make shopping smarter and easier through AI.  
-    Without the support and belief of Shorena, this project wouldn't exist — she believed in the vision from the very beginning.  
+    ShopFlow was created with one mission: to make shopping smarter and easier through AI.<br>
+    Without the support and belief of <strong>Shorena</strong>, this project wouldn't exist —
+    she believed in the vision from the very beginning.<br>
     Together, we aim to create a platform where you can find the best deals, without hassle.
   </p>
 
-  <a href="index.html" class="btn-back">⬅ Back to Home</a>
+  <a href="index.html" class="back-button">⬅ Back to Home</a>
+
 </body>
 </html>
 
