@@ -1,27 +1,27 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ShopFlow</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      text-align: center;
     }
 
     h1 {
-      color: #b387f9;
-      font-size: 3em;
-      margin-top: 20px;
+      color: #b280ff;
+      font-size: 3rem;
+      margin-top: 30px;
     }
 
     p {
-      font-size: 1.2em;
+      font-size: 1.2rem;
     }
 
     .highlight {
@@ -30,111 +30,100 @@
     }
 
     .search-container {
-      margin: 20px auto;
+      margin: 30px auto;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 0;
+      gap: 10px;
     }
 
     input[type="text"] {
-      width: 60%;
-      padding: 12px;
-      border-radius: 5px 0 0 5px;
+      padding: 15px;
+      font-size: 1rem;
+      width: 50%;
       border: none;
-      font-size: 16px;
+      border-radius: 5px;
       outline: none;
-      box-shadow: 0 0 10px #8000ff;
+      box-shadow: 0 0 10px #a655ff;
     }
 
     button {
-      padding: 13px 25px;
+      padding: 15px 25px;
       background-color: orange;
+      color: black;
       border: none;
-      color: #000;
+      border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
-      border-radius: 0 5px 5px 0;
     }
 
-    .grid {
+    .buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 40px;
-      gap: 20px;
+      gap: 25px;
+      margin-top: 30px;
     }
 
-    .box {
+    .btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: orange;
       color: black;
-      padding: 30px;
-      width: 250px;
-      height: 100px;
       font-weight: bold;
-      border-radius: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 18px;
-      transition: all 0.3s ease;
+      font-size: 1.2rem;
+      width: 200px;
+      height: 100px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: transform 0.3s, background-color 0.3s;
     }
 
-    .box:hover {
-      transform: translateY(-5px);
-      background-color: #8000ff;
+    .btn-link:hover {
+      transform: scale(1.05);
+      background-color: #a655ff;
       color: white;
     }
 
-    #result {
-      margin-top: 30px;
-      white-space: pre-wrap;
-      color: #ccc;
-      padding: 20px;
-      font-size: 16px;
+    @media (max-width: 600px) {
+      input[type="text"] {
+        width: 80%;
+      }
+      .btn-link {
+        width: 80%;
+      }
     }
   </style>
 </head>
 <body>
-
   <h1>ShopFlow</h1>
-  <p>The easiest way to shop online with AI assistance<br>
-  <span class="highlight">No registration required</span> — jump in and start shopping</p>
+  <p>
+    The easiest way to shop online with AI assistance<br />
+    <span class="highlight">No registration required</span> — jump in and start shopping
+  </p>
 
-  <!-- ✅ AI Powered Search -->
   <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search products or brands..." />
+    <input type="text" id="search-input" placeholder="Search products or brands..." />
     <button onclick="search()">Search</button>
   </div>
 
-  <div class="grid">
-    <a href="about.html" class="box">About Us</a>
-    <a href="shop.html" class="box">Start Shopping</a>
-    <a href="what.html" class="box">What We Offer</a>
+  <div class="buttons">
+    <a class="btn-link" href="about.html">About Us</a>
+    <a class="btn-link" href="shop.html">Start Shopping</a>
+    <a class="btn-link" href="offer.html">What We Offer</a>
+    <a class="btn-link" href="contact.html">Contact</a>
   </div>
-
-  <div class="grid" style="margin-top: 20px;">
-    <a href="contact.html" class="box">Contact</a>
-  </div>
-
-  <div id="result"></div>
 
   <script>
-    async function search() {
-      const prompt = document.getElementById('searchInput').value;
-      const res = await fetch("https://shopflow-ai-server.annabatsikadze9.repl.co/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ prompt })
-      });
-
-      const data = await res.json();
-      document.getElementById("result").innerText = data.result || "No results found.";
+    function search() {
+      const query = document.getElementById("search-input").value;
+      if (query.trim() !== "") {
+        // გადაგყავს AI სერვერზე – შეცვალე თუ საჭირო იქნება
+        window.open("https://best.aliexpress.com/wholesale?SearchText=" + encodeURIComponent(query), "_blank");
+      }
     }
   </script>
-
 </body>
 </html>
 
