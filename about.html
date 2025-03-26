@@ -1,136 +1,68 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ShopFlow</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - ShopFlow</title>
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: sans-serif;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
       text-align: center;
+      padding: 40px 20px;
     }
 
     h1 {
-      color: #a784f2;
-      font-size: 3em;
+      color: #b280ff;
+      margin-bottom: 20px;
     }
 
     p {
-      color: orange;
-      font-size: 1.2em;
-    }
-
-    .search-bar {
-      margin: 30px auto;
-      display: flex;
-      justify-content: center;
-    }
-
-    input[type="text"] {
-      padding: 14px;
-      width: 300px;
-      border-radius: 8px 0 0 8px;
-      border: none;
-      outline: none;
-      font-size: 1em;
-      box-shadow: 0 0 10px #8a2be2;
-    }
-
-    button {
-      padding: 14px 24px;
-      border: none;
-      border-radius: 0 8px 8px 0;
-      background-color: orange;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 10px #8a2be2;
-    }
-
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      font-size: 1.2rem;
       max-width: 800px;
-      margin: 40px auto;
+      margin: auto;
+      line-height: 1.6;
     }
 
-    .grid-button {
-      padding: 20px;
+    .btn-back {
+      margin-top: 40px;
+      padding: 15px 30px;
       background-color: orange;
-      border-radius: 16px;
-      font-size: 1.2em;
       color: black;
+      border: none;
+      border-radius: 8px;
       font-weight: bold;
-      transition: 0.3s ease;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
     }
 
-    .grid-button:hover {
-      background-color: #a784f2;
-      transform: translateY(-5px);
-    }
-
-    .single-button {
-      grid-column: span 3;
-      justify-self: center;
-      width: 60%;
+    .btn-back:hover {
+      background-color: #a655ff;
+      color: white;
     }
 
     @media (max-width: 600px) {
-      .button-grid {
-        grid-template-columns: 1fr;
-      }
-      .single-button {
-        width: 100%;
-        grid-column: span 1;
+      p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <h1>ShopFlow</h1>
+  <h1>About ShopFlow</h1>
   <p>
-    The easiest way to shop online with AI assistance <br>
-    <strong style="color:orange;">No registration required</strong> — jump in and start shopping
+    ShopFlow was created with one mission: to make shopping smarter and easier through AI.  
+    Without the support and belief of Shorena, this project wouldn't exist — she believed in the vision from the very beginning.  
+    Together, we aim to create a platform where you can find the best deals, without hassle.
   </p>
 
-  <div class="search-bar">
-    <form id="searchForm">
-      <input type="text" id="searchInput" placeholder="Search products or brands..." required>
-      <button type="submit">Search</button>
-    </form>
-  </div>
-
-  <div class="button-grid">
-    <a href="about.html" class="grid-button">About Us</a>
-    <a href="shop.html" class="grid-button">Start Shopping</a>
-    <a href="what.html" class="grid-button">What We Offer</a>
-    <a href="contact.html" class="grid-button single-button">Contact</a>
-  </div>
-
-  <script>
-    const searchForm = document.getElementById('searchForm');
-    searchForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const query = document.getElementById('searchInput').value.trim();
-
-      if (!query) return;
-
-      // Encode query to URL-safe format
-      const encodedQuery = encodeURIComponent(query);
-
-      // Your Aliexpress affiliate deep link with search support
-      const aliexpressLink = `https://best.aliexpress.com/wholesale?SearchText=${encodedQuery}&aff_fcid=aa29af5c56bb4c89aa147db6da1ed5b9-1742906550667-02036-_oDNGERR&tt=CPS_NORMAL&aff_fsk=_oDNGERR&aff_platform=portals-tool&sk=_oDNGERR&aff_trace_key=aa29af5c56bb4c89aa147db6da1ed5b9-1742906550667-02036-_oDNGERR&terminal_id=43a399ee08ff4432807ed6b50469c1a5&afSmartRedirect=y`;
-
-      // TODO: Add additional links for other affiliate partners in the future
-      // Example: const temuLink = `https://temu.com/search?q=${encodedQuery}&your_affiliate_id=...`;
-
-      // Redirect to Aliexpress now
-      window.location.href = aliexpressLink;
-    });
-  </script>
+  <a href="index.html" class="btn-back">⬅ Back to Home</a>
 </body>
 </html>
+
 
 
 
